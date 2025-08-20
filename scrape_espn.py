@@ -51,15 +51,54 @@ def scrape_espn_draft_trends():
                 try:
                     cells = row.find_elements(By.TAG_NAME, "td")
                     
-                    if len(cells) >= 5:  # Ensure we have enough data
+                    if len(cells) >= 4:  # Ensure we have enough data
+                        # Cell 0: Rank
+                        rank = cells[0].text.strip()
+                        
+                        # Cell 1: Player name, team, and position all together
+                        player_cell = cells[1]
+                        
+                        # Get player name (in the link)
+                        try:
+                            player_name = player_cell.find_element(By.CSS_SELECTOR, "a.AnchorLink").text.strip()
+                        except:
+                            player_name = ""
+                        
+                        # Get team and position from the full text
+                        team = ""
+                        position = ""
+                        try:
+                            # Get all text from the player cell
+                            full_text = player_cell.text.strip()
+                            # Remove the player name from the full text to get team/position
+                            remaining_text = full_text.replace(player_name, "").strip()
+                            
+                            # The remaining text should be like "Cin WR"
+                            if remaining_text:
+                                parts = remaining_text.split()
+                                if len(parts) >= 2:
+                                    team = parts[0]
+                                    position = parts[1]
+                                elif len(parts) == 1:
+                                    # Sometimes it might just be position
+                                    position = parts[0]
+                        except:
+                            pass
+                        
+                        # Cell 2: ADP (Average Draft Position)
+                        adp = cells[2].text.strip() if len(cells) > 2 else ''
+                        
+                        # Cell 3: 7 Day +/- (this is what was showing in avg_round)
+                        seven_day_change = cells[3].text.strip() if len(cells) > 3 else ''
+                        
                         player_data = {
-                            'rank': cells[0].text.strip(),
-                            'player_name': cells[1].find_element(By.CSS_SELECTOR, "a.AnchorLink").text.strip(),
-                            'team': cells[1].find_element(By.CSS_SELECTOR, "span.playerinfo__playerteam").text.strip(),
-                            'position': cells[2].text.strip(),
-                            'adp': cells[3].text.strip(),
-                            'avg_round': cells[4].text.strip() if len(cells) > 4 else '',
-                            'date_scraped': today_date  # Add today's date
+                            'rank': rank,
+                            'player_name': player_name,
+                            'team': team,
+                            'position': position,
+                            'adp': adp,
+                            'seven_day_change': seven_day_change,
+                            'date_scraped': today_date
                         }
                         
                         if player_data['player_name']:  # Only add valid entries
@@ -111,22 +150,23 @@ def scrape_espn_draft_trends():
         if unique_players:
             df = pd.DataFrame(unique_players)
             
-            # Clean up the data
+            # Clean up the data - convert to numeric where appropriate
             df['rank'] = pd.to_numeric(df['rank'], errors='coerce')
             df['adp'] = pd.to_numeric(df['adp'], errors='coerce')
+            df['seven_day_change'] = pd.to_numeric(df['seven_day_change'], errors='coerce')
             
             # Sort by rank to ensure proper order
             df = df.sort_values('rank', na_position='last')
             
             # Save to CSV
-            filename = f'espn_draft_trends_{today_date}.csv'
+            filename = f'Data/espn_draft_trends_{today_date}.csv'
             df.to_csv(filename, index=False)
             
             print(f"\n✅ Successfully scraped {len(unique_players)} unique players")
             print(f"📄 Data saved to {filename}")
             print(f"📅 Data scraped on: {today_date}")
             print(f"\nTop 5 players:")
-            print(df[['rank', 'player_name', 'position', 'adp', 'date_scraped']].head())
+            print(df[['rank', 'player_name', 'team', 'position', 'adp', 'seven_day_change']].head())
             
             return df
         else:
