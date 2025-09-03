@@ -1,0 +1,201 @@
+Rank,Player.Name,Tier,Position,Best.Rank,Worst.Rank,Avg.Rank,Std.Dev,scoring_format,date_scraped
+1,Ja'Marr Chase,1,WR,1,6,2.06,0.58,Standard,2025-09-03
+2,Bijan Robinson,1,RB,1,8,2.81,1.36,Standard,2025-09-03
+3,Saquon Barkley,1,RB,1,24,3.44,4.37,Standard,2025-09-03
+4,CeeDee Lamb,1,WR,2,10,5.13,1.5,Standard,2025-09-03
+5,Justin Jefferson,1,WR,3,9,5.14,1.18,Standard,2025-09-03
+6,Jahmyr Gibbs,1,RB,1,23,5.23,2.99,Standard,2025-09-03
+7,Derrick Henry,2,RB,1,48,8.62,5.01,Standard,2025-09-03
+8,Nico Collins,2,WR,4,37,9.24,4.45,Standard,2025-09-03
+9,Brian Thomas Jr.,2,WR,6,31,10.78,4.0,Standard,2025-09-03
+10,Malik Nabers,2,WR,4,46,10.92,4.62,Standard,2025-09-03
+11,Puka Nacua,2,WR,5,34,12.53,4.83,Standard,2025-09-03
+12,Ashton Jeanty,3,RB,5,60,14.26,6.33,Standard,2025-09-03
+13,Christian McCaffrey,3,RB,3,47,14.52,6.78,Standard,2025-09-03
+14,Drake London,3,WR,6,32,15.85,5.0,Standard,2025-09-03
+15,Jonathan Taylor,3,RB,9,40,16.27,5.89,Standard,2025-09-03
+16,A.J. Brown,3,WR,7,35,16.94,3.83,Standard,2025-09-03
+17,Amon-Ra St. Brown,3,WR,9,30,13.81,3.68,Standard,2025-09-03
+18,Josh Jacobs,4,RB,12,52,19.05,6.4,Standard,2025-09-03
+19,George Kittle,4,TE,9,56,19.94,5.92,Standard,2025-09-03
+20,Brock Bowers,4,TE,12,34,21.35,6.33,Standard,2025-09-03
+21,Bucky Irving,4,RB,8,45,22.78,7.06,Standard,2025-09-03
+22,Ladd McConkey,4,WR,11,49,23.07,5.06,Standard,2025-09-03
+23,Kyren Williams,4,RB,12,52,24.11,7.64,Standard,2025-09-03
+24,De'Von Achane,5,RB,13,42,24.53,6.24,Standard,2025-09-03
+25,Josh Allen,5,QB,15,36,26.13,2.18,Standard,2025-09-03
+26,Lamar Jackson,5,QB,17,36,26.69,2.29,Standard,2025-09-03
+27,Chase Brown,5,RB,8,45,26.88,6.34,Standard,2025-09-03
+28,Tee Higgins,5,WR,16,59,28.44,7.73,Standard,2025-09-03
+29,Mike Evans,5,WR,19,65,29.69,7.92,Standard,2025-09-03
+30,Trey McBride,6,TE,16,47,30.9,5.96,Standard,2025-09-03
+31,Jayden Daniels,6,QB,25,58,32.99,7.88,Standard,2025-09-03
+32,James Cook,6,RB,17,52,33.77,6.11,Standard,2025-09-03
+33,Jaxon Smith-Njigba,6,WR,14,75,34.23,9.53,Standard,2025-09-03
+34,Tyreek Hill,7,WR,14,89,34.95,10.2,Standard,2025-09-03
+35,Davante Adams,7,WR,19,54,36.53,7.01,Standard,2025-09-03
+36,Jalen Hurts,7,QB,20,62,37.1,8.46,Standard,2025-09-03
+37,Omarion Hampton,7,RB,17,148,37.81,13.63,Standard,2025-09-03
+38,Marvin Harrison Jr.,8,WR,19,106,39.54,10.72,Standard,2025-09-03
+39,Kenneth Walker III,8,RB,20,60,40.57,7.3,Standard,2025-09-03
+40,Garrett Wilson,8,WR,24,69,40.86,7.95,Standard,2025-09-03
+41,Terry McLaurin,8,WR,22,83,41.16,11.77,Standard,2025-09-03
+42,DK Metcalf,9,WR,26,81,46.08,10.56,Standard,2025-09-03
+43,Chuba Hubbard,9,RB,33,66,46.12,6.46,Standard,2025-09-03
+44,Breece Hall,9,RB,20,66,46.31,9.06,Standard,2025-09-03
+45,Joe Burrow,9,QB,29,53,46.68,9.01,Standard,2025-09-03
+46,James Conner,9,RB,30,71,47.93,6.99,Standard,2025-09-03
+47,Courtland Sutton,9,WR,26,81,48.08,8.49,Standard,2025-09-03
+48,TreVeyon Henderson,9,RB,23,77,48.31,9.84,Standard,2025-09-03
+49,Jameson Williams,9,WR,24,81,48.95,11.2,Standard,2025-09-03
+50,Alvin Kamara,9,RB,23,64,49.49,7.56,Standard,2025-09-03
+51,DJ Moore,10,WR,31,91,52.69,11.47,Standard,2025-09-03
+52,Xavier Worthy,10,WR,30,132,52.96,14.2,Standard,2025-09-03
+53,Calvin Ridley,10,WR,26,83,55.13,11.44,Standard,2025-09-03
+54,Tetairoa McMillan,10,WR,29,173,56.35,18.36,Standard,2025-09-03
+55,George Pickens,10,WR,31,91,56.89,13.25,Standard,2025-09-03
+56,DeVonta Smith,11,WR,40,98,58.19,10.41,Standard,2025-09-03
+57,David Montgomery,11,RB,36,85,58.29,7.58,Standard,2025-09-03
+58,D'Andre Swift,11,RB,39,117,59.2,11.24,Standard,2025-09-03
+59,Zay Flowers,11,WR,39,106,60.04,13.06,Standard,2025-09-03
+60,Tony Pollard,11,RB,41,121,60.19,9.84,Standard,2025-09-03
+61,Sam LaPorta,11,TE,34,96,60.41,8.76,Standard,2025-09-03
+62,RJ Harvey,11,RB,28,141,60.58,14.13,Standard,2025-09-03
+63,Isiah Pacheco,11,RB,37,145,62.95,12.82,Standard,2025-09-03
+64,Patrick Mahomes II,11,QB,36,97,63.32,9.98,Standard,2025-09-03
+65,Jaylen Waddle,11,WR,39,109,66.69,14.44,Standard,2025-09-03
+66,Aaron Jones Sr.,11,RB,55,126,68.9,8.16,Standard,2025-09-03
+67,Baker Mayfield,11,QB,58,105,69.69,13.68,Standard,2025-09-03
+68,Mark Andrews,11,TE,54,105,70.78,13.93,Standard,2025-09-03
+69,Bo Nix,12,QB,45,118,73.27,13.08,Standard,2025-09-03
+70,Kaleb Johnson,12,RB,55,155,75.24,19.07,Standard,2025-09-03
+71,T.J. Hockenson,12,TE,30,96,75.52,9.32,Standard,2025-09-03
+72,Tyrone Tracy Jr.,12,RB,60,119,76.84,10.16,Standard,2025-09-03
+73,Travis Hunter,12,WR,35,183,74.05,17.85,Standard,2025-09-03
+74,Ricky Pearsall,12,WR,38,142,78.3,17.1,Standard,2025-09-03
+75,Rome Odunze,12,WR,48,115,78.96,12.46,Standard,2025-09-03
+76,Kyler Murray,12,QB,58,112,80.57,15.26,Standard,2025-09-03
+77,Chris Olave,12,WR,48,125,84.05,14.0,Standard,2025-09-03
+78,Dak Prescott,12,QB,42,128,84.19,16.94,Standard,2025-09-03
+79,Rashee Rice,12,WR,39,193,84.42,25.34,Standard,2025-09-03
+80,Jordan Mason,12,RB,64,161,84.72,18.5,Standard,2025-09-03
+81,Travis Kelce,12,TE,53,130,85.96,10.92,Standard,2025-09-03
+82,Emeka Egbuka,12,WR,39,149,86.12,22.13,Standard,2025-09-03
+83,Jerry Jeudy,12,WR,57,165,86.7,15.9,Standard,2025-09-03
+84,Jaylen Warren,12,RB,49,148,87.12,15.5,Standard,2025-09-03
+85,Deebo Samuel Sr.,12,WR,44,147,88.22,15.15,Standard,2025-09-03
+86,Jordan Addison,13,WR,54,142,90.84,16.03,Standard,2025-09-03
+87,Brock Purdy,13,QB,59,133,92.65,16.4,Standard,2025-09-03
+88,David Njoku,13,TE,61,137,92.73,13.87,Standard,2025-09-03
+89,Tucker Kraft,13,TE,56,208,94.21,15.23,Standard,2025-09-03
+90,Justin Fields,13,QB,62,178,94.28,20.57,Standard,2025-09-03
+91,Travis Etienne Jr.,13,RB,60,150,95.03,17.04,Standard,2025-09-03
+92,Zach Charbonnet,13,RB,55,148,96.8,15.99,Standard,2025-09-03
+93,Jacory Croskey-Merritt,13,RB,57,323,98.63,38.79,Standard,2025-09-03
+94,Jayden Reed,13,WR,70,223,98.75,20.12,Standard,2025-09-03
+95,Justin Herbert,13,QB,62,133,99.23,14.78,Standard,2025-09-03
+96,Jauan Jennings,13,WR,70,153,99.75,14.54,Standard,2025-09-03
+97,Tyler Warren,13,TE,60,157,99.82,15.07,Standard,2025-09-03
+98,Stefon Diggs,13,WR,61,149,100.43,17.62,Standard,2025-09-03
+99,Tank Bigsby,13,RB,60,188,100.53,21.68,Standard,2025-09-03
+100,Matthew Golden,13,WR,59,169,98.12,23.64,Standard,2025-09-03
+101,Drake Maye,13,QB,57,138,101.08,14.71,Standard,2025-09-03
+102,Evan Engram,13,TE,81,153,101.52,17.97,Standard,2025-09-03
+103,Javonte Williams,13,RB,60,174,101.55,19.04,Standard,2025-09-03
+104,Caleb Williams,13,QB,62,136,101.64,15.09,Standard,2025-09-03
+105,Jakobi Meyers,13,WR,65,147,102.66,14.16,Standard,2025-09-03
+106,Jared Goff,13,QB,62,150,104.36,15.24,Standard,2025-09-03
+107,J.K. Dobbins,13,RB,67,242,102.86,26.53,Standard,2025-09-03
+108,Rhamondre Stevenson,14,RB,77,163,110.53,19.36,Standard,2025-09-03
+109,Jordan Love,14,QB,75,146,112.31,12.07,Standard,2025-09-03
+110,Khalil Shakir,14,WR,83,138,115.17,12.07,Standard,2025-09-03
+111,Trevor Lawrence,14,QB,78,136,115.62,11.92,Standard,2025-09-03
+112,Keon Coleman,14,WR,69,179,117.4,24.29,Standard,2025-09-03
+113,Cam Skattebo,14,RB,77,218,118.44,24.01,Standard,2025-09-03
+114,C.J. Stroud,14,QB,73,152,119.22,13.95,Standard,2025-09-03
+115,Kyle Pitts Sr.,14,TE,67,180,120.62,21.39,Standard,2025-09-03
+116,Josh Downs,14,WR,87,149,120.85,11.78,Standard,2025-09-03
+117,J.J. McCarthy,14,QB,79,178,121.08,17.21,Standard,2025-09-03
+118,Dallas Goedert,14,TE,95,172,121.08,17.46,Standard,2025-09-03
+119,Chris Godwin Jr.,14,WR,69,343,122.09,31.94,Standard,2025-09-03
+120,Cooper Kupp,14,WR,81,174,122.29,14.9,Standard,2025-09-03
+121,Dalton Kincaid,14,TE,74,208,123.45,20.64,Standard,2025-09-03
+122,Darnell Mooney,14,WR,83,201,125.33,18.6,Standard,2025-09-03
+123,Najee Harris,14,RB,66,196,125.35,25.5,Standard,2025-09-03
+124,Austin Ekeler,14,RB,66,232,125.41,24.85,Standard,2025-09-03
+125,Braelon Allen,14,RB,82,196,125.77,25.55,Standard,2025-09-03
+126,Michael Pittman Jr.,14,WR,75,169,126.45,14.83,Standard,2025-09-03
+127,Rashid Shaheed,14,WR,93,196,129.51,18.13,Standard,2025-09-03
+128,Trey Benson,14,RB,78,232,129.56,23.13,Standard,2025-09-03
+129,Brian Robinson Jr.,14,RB,66,300,130.98,38.04,Standard,2025-09-03
+130,Colston Loveland,15,TE,73,225,131.09,25.2,Standard,2025-09-03
+131,Ray Davis,15,RB,87,227,131.7,18.42,Standard,2025-09-03
+132,Quinshon Judkins,14,RB,52,303,129.31,42.07,Standard,2025-09-03
+133,Joe Mixon,15,RB,45,303,134.94,54.03,Standard,2025-09-03
+134,Nick Chubb,15,RB,71,305,136.86,40.53,Standard,2025-09-03
+135,Brandon Aiyuk,15,WR,88,220,137.36,25.16,Standard,2025-09-03
+136,Rachaad White,15,RB,95,221,137.78,21.79,Standard,2025-09-03
+137,Tua Tagovailoa,15,QB,78,213,139.2,18.27,Standard,2025-09-03
+138,Jake Ferguson,15,TE,86,228,139.42,25.13,Standard,2025-09-03
+139,Tyler Allgeier,16,RB,110,215,141.77,15.76,Standard,2025-09-03
+140,Rashod Bateman,15,WR,79,179,139.99,20.11,Standard,2025-09-03
+141,Christian Kirk,16,WR,93,226,140.84,19.62,Standard,2025-09-03
+142,Jaydon Blue,16,RB,77,309,145.98,28.12,Standard,2025-09-03
+143,Hunter Henry,16,TE,84,225,146.29,24.42,Standard,2025-09-03
+144,Bryce Young,16,QB,96,273,146.65,27.05,Standard,2025-09-03
+145,Tyjae Spears,16,RB,91,277,146.67,29.63,Standard,2025-09-03
+146,Marvin Mims Jr.,16,WR,88,243,144.54,22.86,Standard,2025-09-03
+147,Michael Penix Jr.,16,QB,90,241,147.63,20.53,Standard,2025-09-03
+148,Bhayshul Tuten,16,RB,87,326,149.11,39.38,Standard,2025-09-03
+149,Jerome Ford,16,RB,85,240,150.53,26.61,Standard,2025-09-03
+150,Dylan Sampson,16,RB,71,227,151.54,32.06,Standard,2025-09-03
+151,Luther Burden III,16,WR,101,238,154.66,22.96,Standard,2025-09-03
+152,Cedric Tillman,17,WR,107,247,156.76,20.1,Standard,2025-09-03
+153,Jonnu Smith,17,TE,84,235,159.15,35.96,Standard,2025-09-03
+154,Geno Smith,17,QB,104,254,161.91,31.06,Standard,2025-09-03
+155,Matthew Stafford,17,QB,107,254,162.18,34.51,Standard,2025-09-03
+156,Jayden Higgins,17,WR,91,271,157.8,31.16,Standard,2025-09-03
+157,Denver Broncos,16,DST,99,184,151.26,7.49,Standard,2025-09-03
+158,Zach Ertz,17,TE,105,235,163.32,28.78,Standard,2025-09-03
+159,Romeo Doubs,17,WR,109,261,164.68,20.7,Standard,2025-09-03
+160,Isaiah Likely,17,TE,103,273,164.99,31.68,Standard,2025-09-03
+161,Philadelphia Eagles,17,DST,105,211,162.7,9.89,Standard,2025-09-03
+162,Rico Dowdle,17,RB,92,262,165.13,29.82,Standard,2025-09-03
+163,Marquise Brown,17,WR,120,226,170.37,20.82,Standard,2025-09-03
+164,Keenan Allen,17,WR,91,327,161.71,43.69,Standard,2025-09-03
+165,Pittsburgh Steelers,17,DST,109,205,167.01,9.49,Standard,2025-09-03
+166,Tre' Harris,17,WR,106,266,176.42,29.88,Standard,2025-09-03
+167,Isaac Guerendo,17,RB,121,291,179.64,42.05,Standard,2025-09-03
+168,Baltimore Ravens,18,DST,112,198,169.72,9.38,Standard,2025-09-03
+169,DeMario Douglas,19,WR,108,243,181.79,28.51,Standard,2025-09-03
+170,Joshua Palmer,18,WR,110,264,175.66,28.07,Standard,2025-09-03
+171,Adam Thielen,19,WR,135,257,180.12,19.96,Standard,2025-09-03
+172,Kyle Williams,19,WR,117,311,179.29,34.66,Standard,2025-09-03
+173,Minnesota Vikings,18,DST,113,196,173.18,9.41,Standard,2025-09-03
+174,Jaylen Wright,20,RB,103,296,186.36,40.56,Standard,2025-09-03
+175,Cam Ward,21,QB,97,284,189.76,40.75,Standard,2025-09-03
+176,Ollie Gordon II,19,RB,76,316,183.1,53.27,Standard,2025-09-03
+177,Wan'Dale Robinson,21,WR,129,268,189.16,29.97,Standard,2025-09-03
+178,Quentin Johnston,19,WR,132,264,181.09,25.82,Standard,2025-09-03
+179,Sam Darnold,22,QB,133,296,191.35,37.18,Standard,2025-09-03
+180,Brenton Strange,21,TE,102,305,189.46,39.16,Standard,2025-09-03
+181,Roschon Johnson,20,RB,141,286,186.11,36.84,Standard,2025-09-03
+182,Xavier Legette,21,WR,122,271,188.96,25.79,Standard,2025-09-03
+183,Houston Texans,19,DST,121,219,182.63,10.98,Standard,2025-09-03
+184,Blake Corum,21,RB,140,312,188.87,34.74,Standard,2025-09-03
+185,Buffalo Bills,20,DST,123,234,184.63,11.16,Standard,2025-09-03
+186,Brandon Aubrey,20,K,125,199,185.4,8.3,Standard,2025-09-03
+187,Kansas City Chiefs,20,DST,124,317,185.92,18.71,Standard,2025-09-03
+188,Detroit Lions,21,DST,126,234,188.0,11.02,Standard,2025-09-03
+189,Jalen Coker,22,WR,116,269,191.53,29.67,Standard,2025-09-03
+190,DeAndre Hopkins,23,WR,139,292,197.67,26.96,Standard,2025-09-03
+191,Cade Otton,24,TE,110,273,202.86,32.76,Standard,2025-09-03
+192,Cameron Dicker,22,K,129,212,192.06,8.67,Standard,2025-09-03
+193,Jake Bates,22,K,130,233,192.29,10.62,Standard,2025-09-03
+194,Chig Okonkwo,24,TE,95,334,205.46,39.37,Standard,2025-09-03
+195,Seattle Seahawks,23,DST,127,279,197.15,16.9,Standard,2025-09-03
+196,Wil Lutz,24,K,134,288,201.14,13.49,Standard,2025-09-03
+197,Los Angeles Rams,24,DST,130,335,203.19,26.56,Standard,2025-09-03
+198,Green Bay Packers,24,DST,142,279,203.74,19.46,Standard,2025-09-03
+199,Alec Pierce,23,WR,149,301,198.19,21.93,Standard,2025-09-03
+200,Will Shipley,24,RB,134,321,201.41,46.68,Standard,2025-09-03
