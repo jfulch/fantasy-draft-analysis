@@ -1,178 +1,491 @@
-
 import pandas as pd
 import time
+import os
+import traceback
+import re
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-import os
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 def scrape_bettingpros_prop_bets():
-    """
-    Scrapes BettingPros NFL prop bets and saves to CSV
-    """
+    """Scrape BettingPros NFL prop bets into CSV."""
     chrome_options = Options()
-    # chrome_options.add_argument('--headless')  # Disabled for visible browser
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--window-size=1366,1200')
+    chrome_options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+    headless = os.getenv("HEADLESS", "true").lower() in ("1", "true", "yes")
+    if headless:
+        chrome_options.add_argument("--headless=new")
 
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    try:
+        driver.set_window_size(1366, 1200)
+    except Exception:
+        pass
+
+    today_date = datetime.now().strftime('%Y-%m-%d')
+    os.makedirs('Data', exist_ok=True)
 
     try:
-        print("Loading BettingPros prop bets page...")
         driver.get("https://www.bettingpros.com/nfl/picks/prop-bets/")
+        time.sleep(3)
 
-        wait = WebDriverWait(driver, 20)
+        # Minimal popup dismissal heuristics
+        def click_if_text_button(txts):
+            try:
+                buttons = driver.find_elements(By.TAG_NAME, 'button')
+                for b in buttons:
+                    try:
+                        if not b.is_displayed():
+                            continue
+                        t = (b.text or '').strip().lower()
+                        for want in txts:
+                            if want in t:
+                                b.click()
+                                return True
+                    except Exception:
+                        continue
+            except Exception:
+                pass
+            return False
 
-        # Enhanced popup handling
-        time.sleep(4)  # Wait longer for popup to appear
-        popup_closed = False
+        click_if_text_button(['accept', 'accept all', 'accept cookies', 'got it', 'dismiss', 'no thanks'])
+
+        # Aggressive JS overlay removal (best-effort)
         try:
-            # Try common selectors for close buttons
-            for selector in [
-                '[aria-label="Close"]',
-                '.close',
-                '.modal-close',
-                '.Popup__close',
-                '.newsletter-modal__close',
-                '.newsletter-modal__close-btn',
-                '.bp-modal__close',
-                '.bp-modal-close',
-                '.bp-modal__close-btn',
-                '.bp-modal__close-button',
-                '.bp-modal__close-icon',
-                'button',
-                'svg',
-            ]:
-                try:
-                    elements = driver.find_elements(By.CSS_SELECTOR, selector)
-                    for el in elements:
-                        if el.is_displayed():
-                            # Try clicking if it looks like a close button
-                            txt = el.text.strip().lower()
-                            if txt in ['×', 'close', 'no thanks', 'dismiss', 'cancel', 'got it', 'ok'] or el.get_attribute('aria-label') in ['Close', 'close']:
-                                el.click()
-                                print(f"Closed popup with selector: {selector} and text: {txt}")
-                                time.sleep(1)
-                                popup_closed = True
-                                break
-                        if popup_closed:
-                            break
-                    if popup_closed:
-                        break
-                except Exception:
-                    continue
-            if not popup_closed:
-                # Try to send ESC key to close overlays
-                from selenium.webdriver.common.keys import Keys
-                body = driver.find_element(By.TAG_NAME, 'body')
-                body.send_keys(Keys.ESCAPE)
-                print("Sent ESC key to close popup")
-                time.sleep(1)
+            js = """
+            Array.from(document.querySelectorAll('div, section, aside')).forEach(function(el){
+              try{
+                var s = window.getComputedStyle(el);
+                if ((s.position==='fixed' || s.position==='absolute') && el.offsetHeight>50 && el.offsetWidth>50) el.remove();
+              }catch(e){}
+            });
+            """
+            driver.execute_script(js)
         except Exception:
             pass
 
-        # Wait longer for dynamic content to load
-        time.sleep(6)
-        print("Scrolling player list container to load more data...")
-        max_scrolls = 40
-        last_row_count = 0
-        container = None
-        # Use the provided class for the scrollable container
-        try:
-            container = driver.find_element(By.CSS_SELECTOR, '.table-overflow--is-scrollable-vertical.props-table')
-            print("Found scrollable container with class 'table-overflow--is-scrollable-vertical props-table'")
-        except Exception:
-            print("Could not find scrollable player list container, defaulting to page scroll.")
-            container = None
+        time.sleep(int(os.getenv('POST_POPUP_WAIT', '4')))
 
+        candidate_table_selectors = [
+            '.table-overflow--is-scrollable-vertical.props-table table',
+            'table.table.table--is-striped',
+            'table'
+        ]
+
+        def find_scrollable_container():
+            selectors = ['.table-overflow--is-scrollable-vertical.props.table', '.table-overflow--is-scrollable-vertical.props-table', '.table-overflow.props-table', '.pbcs-table__wrapper']
+            for sel in selectors:
+                try:
+                    el = driver.find_element(By.CSS_SELECTOR, sel)
+                    client_h = driver.execute_script('return arguments[0].clientHeight;', el)
+                    scroll_h = driver.execute_script('return arguments[0].scrollHeight;', el)
+                    if scroll_h > client_h + 10:
+                        return el
+                except Exception:
+                    continue
+            # JS fallback: any scrollable div
+            try:
+                el = driver.execute_script("""
+                var els = Array.from(document.querySelectorAll('div, section'));
+                for (var i=0;i<els.length;i++){
+                  var s = window.getComputedStyle(els[i]);
+                  if ((s.overflowY=='auto' || s.overflowY=='scroll') && els[i].scrollHeight>els[i].clientHeight+10) return els[i];
+                }
+                return null;
+                """)
+                return el
+            except Exception:
+                return None
+
+        def parse_table_to_list(table_el):
+            """Robust table parser: map headers to columns, prefer cells matching patterns, and fall back to scanning row cells and buttons for line/odds and player name."""
+            props = []
+            try:
+                headers = [th.text.strip().lower() for th in table_el.find_elements(By.TAG_NAME, 'th')]
+            except Exception:
+                headers = []
+            try:
+                rows = table_el.find_elements(By.TAG_NAME, 'tr')
+            except Exception:
+                rows = []
+
+            # Build header map by keywords
+            header_map = {}
+            for i, h in enumerate(headers):
+                if 'player' in h or 'name' in h:
+                    header_map['player'] = i
+                elif 'prop' in h or 'bet' in h or 'type' in h:
+                    header_map['bet_type'] = i
+                elif 'line' in h or 'o/u' in h or 'over' in h or 'under' in h:
+                    header_map['line'] = i
+                elif 'odd' in h or 'odds' in h:
+                    header_map['odds'] = i
+
+            start = 1 if rows and headers else 0
+
+            for row in rows[start:]:
+                try:
+                    cells = row.find_elements(By.TAG_NAME, 'td')
+                    # helper to safely read cell text
+                    def ct(idx):
+                        try:
+                            return cells[idx].text.strip()
+                        except Exception:
+                            return ''
+
+                    # Primary reads using header mapping
+                    player_raw = ct(header_map.get('player', 0))
+                    bet_raw = ct(header_map.get('bet_type', 1))
+                    line_raw = ct(header_map.get('line', 2))
+                    odds_raw = ct(header_map.get('odds', 3))
+
+                    # If player_raw looks like junk (percent/no letters), try to find the first cell with letters
+                    def first_alpha_cell():
+                        for c in cells:
+                            try:
+                                t = c.text.strip()
+                                if t and re.search(r'[A-Za-z]', t):
+                                    return t
+                            except Exception:
+                                continue
+                        return ''
+
+                    if (not player_raw) or re.search(r'\d+%', player_raw) or not re.search(r'[A-Za-z]', player_raw):
+                        alt = first_alpha_cell()
+                        if alt:
+                            player_raw = alt
+
+                    # If odds_raw missing, scan row cells for parentheses or button text
+                    if not odds_raw:
+                        # look for parentheses in any cell
+                        for c in cells:
+                            try:
+                                t = c.text or ''
+                                m = re.search(r'\(([^)]+)\)', t)
+                                if m:
+                                    odds_raw = m.group(1).strip()
+                                    break
+                            except Exception:
+                                continue
+                        # fallback: look for button text inside the row
+                        if not odds_raw:
+                            try:
+                                btns = row.find_elements(By.XPATH, ".//button")
+                                for b in btns:
+                                    try:
+                                        bt = (b.text or '').strip()
+                                        m = re.search(r'\(([^)]+)\)', bt)
+                                        if m:
+                                            odds_raw = m.group(1).strip()
+                                            # also consider bet text from button (e.g., 'O 220.5')
+                                            if not line_raw or not re.search(r'[ou]\s*\d', line_raw, re.I):
+                                                # try to extract O/U and value
+                                                m2 = re.search(r'\b([OUou])\s*([\d\.]+)', bt)
+                                                if m2:
+                                                    line_raw = (m2.group(1) + ' ' + m2.group(2)).strip()
+                                            break
+                                    except Exception:
+                                        continue
+                            except Exception:
+                                pass
+
+                    # If line_raw missing, scan cells/buttons for o/u or numeric patterns
+                    if not line_raw or not re.search(r'[ou]\s*\d', line_raw, re.I):
+                        found = ''
+                        for c in cells:
+                            try:
+                                t = c.text or ''
+                                if re.search(r'[ou]\s*\d', t, re.I) or re.search(r'\d+\.?\d*\s*(Pass|Rush|Rec|Yds|Yards|TD)', t, re.I):
+                                    found = t.strip()
+                                    break
+                            except Exception:
+                                continue
+                        if not found:
+                            try:
+                                btns = row.find_elements(By.XPATH, ".//button")
+                                for b in btns:
+                                    try:
+                                        bt = b.text or ''
+                                        if re.search(r'[ou]\s*\d', bt, re.I) or re.search(r'\d+\.?\d*\s*(Pass|Rush|Rec|Yds|Yards|TD)', bt, re.I):
+                                            found = bt.strip()
+                                            break
+                                    except Exception:
+                                        continue
+                            except Exception:
+                                pass
+                        if found:
+                            line_raw = found
+
+                    # parse player into name/position/matchup when possible
+                    player_name = ''
+                    position = ''
+                    matchup = ''
+                    try:
+                        parts = player_raw.split('\n')
+                        if parts:
+                            player_name = parts[0].strip()
+                        if len(parts) >= 2:
+                            if re.search(r'\b(QB|RB|WR|TE|K|PK|DEF)\b', parts[1], re.I):
+                                position = parts[1].strip()
+                            else:
+                                matchup = parts[1].strip()
+                        if len(parts) >= 3:
+                            matchup = parts[2].replace('- ', '').strip()
+                    except Exception:
+                        player_name = player_raw
+
+                    # final normalization for odds and line
+                    odds_val = ''
+                    if odds_raw:
+                        m_odds = re.search(r'\(([^)]+)\)', odds_raw)
+                        if m_odds:
+                            odds_val = m_odds.group(1).strip()
+                        else:
+                            odds_val = odds_raw.strip()
+
+                    line_val = ''
+                    bet_type_val = ''
+                    if line_raw:
+                        txt = re.sub(r'\([^)]*\)', '', line_raw).strip()
+                        m = re.match(r'([ouOUn]?[\d\.\-]+)\s*(.*)', txt)
+                        if m:
+                            line_val = m.group(1).strip()
+                            bet_type_val = m.group(2).strip()
+                        else:
+                            mn = re.search(r'([OUou]?\s*[\d\.]+)', txt)
+                            if mn:
+                                line_val = mn.group(1).strip()
+                            bet_type_val = txt
+
+                    # ensure we have a plausible player name (must contain letters)
+                    if not player_name or not re.search(r'[A-Za-z]', player_name):
+                        continue
+
+                    props.append({
+                        'player_name': player_name,
+                        'position': position,
+                        'matchup': matchup,
+                        'bet_type': bet_type_val or bet_raw,
+                        'line': line_val,
+                        'odds': odds_val,
+                        'sportsbook': '',
+                        'date_scraped': today_date
+                    })
+                except Exception:
+                    continue
+            return props
+
+        def parse_cards_fallback():
+            candidates = []
+            try:
+                elems = driver.find_elements(By.CSS_SELECTOR, 'main div, .pbcs-content-container div, article, li')
+            except Exception:
+                elems = []
+            patterns = re.compile(r'\b(pass|rush|receiv|rec|td|yards|yds|receptions|passing)\b', re.I)
+            for el in elems:
+                try:
+                    txt = el.text.strip()
+                    if not txt or not patterns.search(txt):
+                        continue
+                    lines = [l.strip() for l in txt.splitlines() if l.strip()]
+                    # find bet line index
+                    bet_idx = None
+                    for i, l in enumerate(lines):
+                        if re.search(r'[ou]\s*\d', l, re.I) or re.search(r'\d+\.?\d*\s*(Pass|Rush|Rec|Yds|Yards)', l, re.I):
+                            bet_idx = i
+                            break
+                    if bet_idx is None or bet_idx == 0:
+                        continue
+                    # find player name above
+                    player_name = None
+                    for p in range(bet_idx-1, -1, -1):
+                        cand = lines[p]
+                        if len(cand) < 3:
+                            continue
+                        if any(x in cand.lower() for x in ['best nfl', 'prop bet', 'click to view', 'premium']):
+                            continue
+                        player_name = cand
+                        break
+                    if not player_name:
+                        continue
+                    bet_line = lines[bet_idx]
+                    odds = ''
+                    m = re.search(r'\(([^)]+)\)', bet_line)
+                    if m:
+                        odds = m.group(1).strip()
+                    bet_text = re.sub(r'\([^)]*\)', '', bet_line).strip()
+                    mm = re.match(r'([ouOUn]?[\d\.\-]+)\s*(.*)', bet_text)
+                    line = ''
+                    bet_type = bet_text
+                    if mm:
+                        line = mm.group(1).strip()
+                        bet_type = mm.group(2).strip()
+                    candidates.append({'player_name': player_name, 'position': '', 'matchup': '', 'bet_type': bet_type, 'line': line, 'odds': odds, 'sportsbook': '', 'date_scraped': today_date})
+                except Exception:
+                    continue
+            # dedupe and filter
+            seen = set()
+            out = []
+            for c in candidates:
+                name = (c.get('player_name') or '').strip()
+                # reject percent/junk names
+                if not name or re.search(r'\d+%', name) or 'click to view' in name.lower() or not re.search(r'[A-Za-z]', name):
+                    continue
+                key = (name.lower(), c.get('bet_type','').strip().lower(), c.get('line','').strip(), c.get('odds','').strip())
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append(c)
+            return out
+
+        # scrolling loop
+        container = find_scrollable_container()
+        max_scrolls = int(os.getenv('MAX_SCROLLS', '40'))
+        increment_wait = int(os.getenv('SCROLL_WAIT', '6'))
+        prop_bets = []
+        last_row_count = 0
+        consecutive_no_growth = 0
         for i in range(max_scrolls):
             try:
                 if container:
-                    driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", container)
+                    client_h = driver.execute_script('return arguments[0].clientHeight;', container)
+                    scroll_top = driver.execute_script('return arguments[0].scrollTop;', container)
+                    scroll_height = driver.execute_script('return arguments[0].scrollHeight;', container)
+                    next_top = scroll_top + client_h
+                    if next_top + 60 >= scroll_height:
+                        driver.execute_script('arguments[0].scrollTop = arguments[0].scrollHeight;', container)
+                        time.sleep(increment_wait)
+                    else:
+                        driver.execute_script('arguments[0].scrollTop = arguments[1];', container, next_top)
                 else:
-                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                print(f"Scroll {i+1}/{max_scrolls}...")
-                time.sleep(15)
-                table = driver.find_element(By.CSS_SELECTOR, 'table')
-                rows = table.find_elements(By.TAG_NAME, "tr")
+                    driver.execute_script('window.scrollBy(0, Math.max(window.innerHeight*0.35, 300));')
+                time.sleep(increment_wait)
+
+                # attempt table parse
+                table = None
+                for sel in candidate_table_selectors:
+                    try:
+                        table = driver.find_element(By.CSS_SELECTOR, sel)
+                        if table:
+                            break
+                    except Exception:
+                        continue
+                if table:
+                    current = parse_table_to_list(table)
+                    # merge dedupe
+                    ek = set((p['player_name'].strip().lower(), p['bet_type'].strip().lower(), p['line'].strip(), p['odds'].strip()) for p in prop_bets)
+                    new = 0
+                    for p in current:
+                        # skip junk
+                        if not p.get('player_name'):
+                            continue
+                        if (p['player_name'].strip().lower(), p['bet_type'].strip().lower(), p['line'].strip(), p['odds'].strip()) not in ek:
+                            prop_bets.append(p)
+                            ek.add((p['player_name'].strip().lower(), p['bet_type'].strip().lower(), p['line'].strip(), p['odds'].strip()))
+                            new += 1
+                    if new:
+                        # save partial cleaned
+                        cleaned = [r for r in prop_bets if not re.search(r'\d+%', (r.get('player_name') or '')) and 'click to view' not in (r.get('player_name') or '').lower() and re.search(r'[A-Za-z]', (r.get('player_name') or ''))]
+                        pd.DataFrame(cleaned).to_csv(f'Data/bettingpros_prop_bets_{today_date}.csv', index=False)
+
+                # stop conditions based on growth
+                rows = table.find_elements(By.TAG_NAME, 'tr') if table else []
                 if len(rows) == last_row_count:
-                    print("No new rows loaded, stopping scroll.")
-                    break
-                last_row_count = len(rows)
+                    consecutive_no_growth += 1
+                    if consecutive_no_growth >= 4:
+                        break
+                else:
+                    last_row_count = len(rows)
+                    consecutive_no_growth = 0
             except Exception:
-                print("Table not found during scrolling.")
                 break
 
-        print("Extracting prop bet data...")
-        today_date = datetime.now().strftime('%Y-%m-%d')
-        os.makedirs('Data', exist_ok=True)
-
-        prop_bets = []
-
-        # Try more specific selector for prop bet table
+        # after scrolling and incremental parsing, save debug artifacts if nothing was captured
         try:
-            table = driver.find_element(By.CSS_SELECTOR, 'table')
-            headers = [th.text.strip().lower() for th in table.find_elements(By.TAG_NAME, "th")]
-            if 'player' in headers or 'name' in headers:
-                rows = table.find_elements(By.TAG_NAME, "tr")[1:]  # skip header
-                for row in rows:
-                    cells = row.find_elements(By.TAG_NAME, "td")
-                    if len(cells) >= 5:
-                        # Split player cell into name, position, matchup
-                        player_raw = cells[0].text.strip()
-                        player_name, position, matchup = '', '', ''
-                        try:
-                            parts = player_raw.split('\n')
-                            if len(parts) >= 3:
-                                player_name = parts[0].strip()
-                                position = parts[1].strip()
-                                matchup = parts[2].replace('- ', '').strip()
-                            elif len(parts) == 2:
-                                player_name = parts[0].strip()
-                                position = parts[1].strip()
-                        except Exception:
-                            player_name = player_raw
-                        # Remove line breaks from bet_type and line columns
-                        bet_type = ' '.join(cells[1].text.strip().splitlines())
-                        line = ' '.join(cells[2].text.strip().splitlines())
-                        odds = ' '.join(cells[3].text.strip().splitlines())
-                        sportsbook = cells[4].text.strip()
-                        prop_bets.append({
-                            'player_name': player_name,
-                            'position': position,
-                            'matchup': matchup,
-                            'bet_type': bet_type,
-                            'line': line,
-                            'odds': odds,
-                            'sportsbook': sportsbook,
-                            'date_scraped': today_date
-                        })
-        except Exception as e:
-            print(f"Table not found or error extracting rows: {e}")
+            if not prop_bets:
+                html_path = f'Data/debug_page_after_scroll_{today_date}.html'
+                png_path = f'Data/debug_screenshot_after_scroll_{today_date}.png'
+                try:
+                    with open(html_path, 'w', encoding='utf-8') as f:
+                        f.write(driver.page_source)
+                    print(f"Saved debug HTML to {html_path}")
+                except Exception as e:
+                    print(f"Failed saving debug HTML: {e}")
+                try:
+                    driver.save_screenshot(png_path)
+                    print(f"Saved debug screenshot to {png_path}")
+                except Exception as e:
+                    print(f"Failed saving debug screenshot: {e}")
+        except Exception:
+            pass
 
-        if prop_bets:
-            df = pd.DataFrame(prop_bets)
-            filename = f'Data/bettingpros_prop_bets_{today_date}.csv'
-            df.to_csv(filename, index=False)
-            print(f"\n✅ Successfully scraped {len(df)} prop bets")
-            print(f"📄 Data saved to {filename}")
-            print(f"📅 Data scraped on: {today_date}")
-            print(f"\nTop 5 prop bets:")
-            print(df.head())
+        # if collected nothing from table, try card fallback
+        if not prop_bets:
+            cards = parse_cards_fallback()
+            if cards:
+                prop_bets = cards
+
+        # final cleaning/dedupe
+        final = []
+        seen = set()
+        for p in prop_bets:
+            try:
+                name = (p.get('player_name') or '').strip()
+                bet = (p.get('bet_type') or '').strip()
+                line = (p.get('line') or '').strip()
+                odds = (p.get('odds') or '').strip()
+                if not name:
+                    continue
+                if re.search(r'\d+%', name) or 'click to view' in name.lower() or 'out of' in name.lower() or not re.search(r'[A-Za-z]', name):
+                    continue
+                key = (name.lower(), bet.lower(), line, odds)
+                if key in seen:
+                    continue
+                seen.add(key)
+                final.append({'player_name': name, 'position': p.get('position',''), 'matchup': p.get('matchup',''), 'bet_type': bet, 'line': line, 'odds': odds, 'date_scraped': today_date})
+            except Exception:
+                continue
+
+        # If cleaning removed everything, try to salvage any raw rows that contain alphabetic player names
+        if not final:
+            salvage = [p for p in prop_bets if re.search(r'[A-Za-z]', (p.get('player_name') or ''))]
+            if salvage:
+                print('No cleaned rows after filtering — salvaging raw extracted rows that contain letters.')
+                final = salvage
+            else:
+                # save raw debug CSV so you can inspect what was extracted
+                if prop_bets:
+                    pd.DataFrame(prop_bets).to_csv(f'Data/bettingpros_prop_bets_raw_{today_date}.csv', index=False)
+                    print(f"No salvageable rows; raw extraction saved to Data/bettingpros_prop_bets_raw_{today_date}.csv")
+                else:
+                    print('No prop_bets captured at all during extraction.')
+                return None
+
+        if final:
+            df = pd.DataFrame(final)
+            df.to_csv(f'Data/bettingpros_prop_bets_final_{today_date}.csv', index=False)
+            print(f"Saved final CSV with {len(df)} rows -> Data/bettingpros_prop_bets_final_{today_date}.csv")
             return df
         else:
-            print("❌ No prop bet data found")
+            print('No prop bets found')
             return None
 
     except Exception as e:
-        print(f"❌ Error occurred: {e}")
+        print(f'Error: {e}')
+        traceback.print_exc()
         return None
     finally:
-        driver.quit()
-        print("\nBrowser closed")
+        try:
+            driver.quit()
+        except Exception:
+            pass
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     scrape_bettingpros_prop_bets()
