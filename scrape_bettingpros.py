@@ -9,6 +9,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+import logging
+
+# Configure module logger
+logging.basicConfig(level=os.getenv('LOG_LEVEL', 'INFO'), format='%(asctime)s %(levelname)s %(message)s')
+logger = logging.getLogger('scrape_bettingpros')
 
 
 def scrape_bettingpros_prop_bets():
@@ -30,6 +35,11 @@ def scrape_bettingpros_prop_bets():
 
     today_date = datetime.now().strftime('%Y-%m-%d')
     os.makedirs('Data', exist_ok=True)
+
+    # timing / counters
+    run_start = time.perf_counter()
+    total_new_rows = 0
+    logger.info(f"Starting BettingPros scrape (HEADLESS={headless}) — output dir=Data, date={today_date}")
 
     try:
         driver.get("https://www.bettingpros.com/nfl/picks/prop-bets/")
@@ -67,8 +77,9 @@ def scrape_bettingpros_prop_bets():
             });
             """
             driver.execute_script(js)
+            logger.debug("Executed overlay removal JS")
         except Exception:
-            pass
+            logger.debug("Overlay removal JS failed", exc_info=True)
 
         time.sleep(int(os.getenv('POST_POPUP_WAIT', '4')))
 
@@ -86,6 +97,7 @@ def scrape_bettingpros_prop_bets():
                     client_h = driver.execute_script('return arguments[0].clientHeight;', el)
                     scroll_h = driver.execute_script('return arguments[0].scrollHeight;', el)
                     if scroll_h > client_h + 10:
+                        logger.debug(f"Found scrollable container by selector {sel} (client_h={client_h}, scroll_h={scroll_h})")
                         return el
                 except Exception:
                     continue
@@ -99,6 +111,8 @@ def scrape_bettingpros_prop_bets():
                 }
                 return null;
                 """)
+                if el:
+                    logger.debug("Found scrollable container via JS fallback")
                 return el
             except Exception:
                 return None
@@ -352,6 +366,7 @@ def scrape_bettingpros_prop_bets():
         last_row_count = 0
         consecutive_no_growth = 0
         for i in range(max_scrolls):
+            loop_start = time.perf_counter()
             try:
                 if container:
                     client_h = driver.execute_script('return arguments[0].clientHeight;', container)
@@ -377,7 +392,9 @@ def scrape_bettingpros_prop_bets():
                     except Exception:
                         continue
                 if table:
+                    parse_start = time.perf_counter()
                     current = parse_table_to_list(table)
+                    parse_elapsed = time.perf_counter() - parse_start
                     # merge dedupe
                     ek = set((p['player_name'].strip().lower(), p['bet_type'].strip().lower(), p['line'].strip(), p['odds'].strip()) for p in prop_bets)
                     new = 0
@@ -389,21 +406,39 @@ def scrape_bettingpros_prop_bets():
                             prop_bets.append(p)
                             ek.add((p['player_name'].strip().lower(), p['bet_type'].strip().lower(), p['line'].strip(), p['odds'].strip()))
                             new += 1
+                    total_new_rows += new
+                    loop_elapsed = time.perf_counter() - loop_start
+                    # ensure we have row count for logging/growth checks
+                    try:
+                        rows = table.find_elements(By.TAG_NAME, 'tr') if table else []
+                    except Exception:
+                        rows = []
+                    logger.info(f"Scroll {i+1}/{max_scrolls}: rows_on_table={len(rows) if table else 'N/A'}, new_added={new}, total_props={len(prop_bets)}, parse_time={parse_elapsed:.2f}s, loop_time={loop_elapsed:.2f}s")
                     if new:
                         # save partial cleaned
                         cleaned = [r for r in prop_bets if not re.search(r'\d+%', (r.get('player_name') or '')) and 'click to view' not in (r.get('player_name') or '').lower() and re.search(r'[A-Za-z]', (r.get('player_name') or ''))]
-                        pd.DataFrame(cleaned).to_csv(f'Data/bettingpros_prop_bets_{today_date}.csv', index=False)
+                        try:
+                            pd.DataFrame(cleaned).to_csv(f'Data/bettingpros_prop_bets_{today_date}.csv', index=False)
+                            logger.info(f"Saved partial cleaned CSV with {len(cleaned)} rows -> Data/bettingpros_prop_bets_{today_date}.csv")
+                        except Exception:
+                            logger.exception("Failed to save partial CSV")
 
                 # stop conditions based on growth
-                rows = table.find_elements(By.TAG_NAME, 'tr') if table else []
+                # rows already computed above when table was present; ensure it's defined
+                try:
+                    rows = rows if 'rows' in locals() else (table.find_elements(By.TAG_NAME, 'tr') if table else [])
+                except Exception:
+                    rows = []
                 if len(rows) == last_row_count:
                     consecutive_no_growth += 1
                     if consecutive_no_growth >= 4:
+                        logger.debug("No growth on table rows for several iterations, breaking scroll loop")
                         break
                 else:
                     last_row_count = len(rows)
                     consecutive_no_growth = 0
             except Exception:
+                logger.exception("Exception in scroll loop, aborting")
                 break
 
         # after scrolling and incremental parsing, save debug artifacts if nothing was captured
@@ -414,16 +449,16 @@ def scrape_bettingpros_prop_bets():
                 try:
                     with open(html_path, 'w', encoding='utf-8') as f:
                         f.write(driver.page_source)
-                    print(f"Saved debug HTML to {html_path}")
+                    logger.info(f"Saved debug HTML to {html_path}")
                 except Exception as e:
-                    print(f"Failed saving debug HTML: {e}")
+                    logger.exception(f"Failed saving debug HTML: {e}")
                 try:
                     driver.save_screenshot(png_path)
-                    print(f"Saved debug screenshot to {png_path}")
+                    logger.info(f"Saved debug screenshot to {png_path}")
                 except Exception as e:
-                    print(f"Failed saving debug screenshot: {e}")
+                    logger.exception(f"Failed saving debug screenshot: {e}")
         except Exception:
-            pass
+            logger.exception("Failed during debug artifact saving")
 
         # if collected nothing from table, try card fallback
         if not prop_bets:
@@ -456,29 +491,36 @@ def scrape_bettingpros_prop_bets():
         if not final:
             salvage = [p for p in prop_bets if re.search(r'[A-Za-z]', (p.get('player_name') or ''))]
             if salvage:
-                print('No cleaned rows after filtering — salvaging raw extracted rows that contain letters.')
+                logger.info('No cleaned rows after filtering — salvaging raw extracted rows that contain letters.')
                 final = salvage
             else:
                 # save raw debug CSV so you can inspect what was extracted
                 if prop_bets:
-                    pd.DataFrame(prop_bets).to_csv(f'Data/bettingpros_prop_bets_raw_{today_date}.csv', index=False)
-                    print(f"No salvageable rows; raw extraction saved to Data/bettingpros_prop_bets_raw_{today_date}.csv")
+                    try:
+                        pd.DataFrame(prop_bets).to_csv(f'Data/bettingpros_prop_bets_raw_{today_date}.csv', index=False)
+                        logger.info(f"No salvageable rows; raw extraction saved to Data/bettingpros_prop_bets_raw_{today_date}.csv")
+                    except Exception:
+                        logger.exception("Failed saving raw extraction CSV")
                 else:
-                    print('No prop_bets captured at all during extraction.')
+                    logger.info('No prop_bets captured at all during extraction.')
                 return None
 
         if final:
             df = pd.DataFrame(final)
-            df.to_csv(f'Data/bettingpros_prop_bets_final_{today_date}.csv', index=False)
-            print(f"Saved final CSV with {len(df)} rows -> Data/bettingpros_prop_bets_final_{today_date}.csv")
+            try:
+                df.to_csv(f'Data/bettingpros_prop_bets_final_{today_date}.csv', index=False)
+                logger.info(f"Saved final CSV with {len(df)} rows -> Data/bettingpros_prop_bets_final_{today_date}.csv")
+            except Exception:
+                logger.exception("Failed saving final CSV")
+            total_elapsed = time.perf_counter() - run_start
+            logger.info(f"Scrape complete: total_rows={len(df)}, total_new_rows_added={total_new_rows}, elapsed={total_elapsed:.2f}s")
             return df
         else:
-            print('No prop bets found')
+            logger.info('No prop bets found')
             return None
 
     except Exception as e:
-        print(f'Error: {e}')
-        traceback.print_exc()
+        logger.exception(f'Error during scrape: {e}')
         return None
     finally:
         try:
