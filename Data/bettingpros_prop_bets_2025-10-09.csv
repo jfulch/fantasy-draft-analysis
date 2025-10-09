@@ -1,0 +1,424 @@
+player_name,position,matchup,bet_type,line,odds,sportsbook,date_scraped
+Dontayvion Wicks,WR,CIN @ GB,Rec Yds,34.5,-10.8,,2025-10-09
+Xavier Worthy,WR,DET @ KC,Rec Yds,63.5,-10.4,,2025-10-09
+Harold Fannin Jr.,TE,CLE @ PIT,Rec Yds,23.5,+9.9,,2025-10-09
+Bijan Robinson,RB,BUF @ ATL,Rush + Rec Yds,105.5,+9.7,,2025-10-09
+Jameson Williams,WR,DET @ KC,Rec Yds,40.5,+9.7,,2025-10-09
+Alvin Kamara,RB,NE @ NO,Rush Yds,36.5,+9.7,,2025-10-09
+Marvin Harrison Jr.,WR,ARI @ IND,Rec Yds,49.5,+9.6,,2025-10-09
+Justin Fields,QB,DEN @ NYJ,Pass Yds,188.5,+9.5,,2025-10-09
+Aaron Rodgers,QB,CLE @ PIT,Pass Yds,212.5,-9.5,,2025-10-09
+Bijan Robinson,RB,BUF @ ATL,Rec Yds,26.5,+9.4,,2025-10-09
+Trevor Lawrence,QB,SEA @ JAC,Pass Yds,220.5,+9.4,,2025-10-09
+Jacory Croskey-Merritt,RB,CHI @ WAS,Rush Yds,64.5,-9.3,,2025-10-09
+Jalen Tolbert,WR,DAL @ CAR,Rec Yds,30.5,-9.2,,2025-10-09
+Jaxon Smith-Njigba,WR,SEA @ JAC,Rec Yds,75.5,+9,,2025-10-09
+Hunter Long,TE,SEA @ JAC,Rec Yds,26.5,-9,,2025-10-09
+Emanuel Wilson,RB,CIN @ GB,Rush Yds,20.5,-8.8,,2025-10-09
+Joshua Palmer,WR,BUF @ ATL,Rec Yds,18.5,+8.5,,2025-10-09
+Daniel Bellinger,TE,PHI @ NYG,Rec Yds,10.5,+8.4,,2025-10-09
+Kenneth Walker III,RB,SEA @ JAC,Rush Yds,48.5,+8.3,,2025-10-09
+Zach Ertz,TE,CHI @ WAS,Rec Yds,25.5,+8.2,,2025-10-09
+RJ Harvey,RB,DEN @ NYJ,Rush Yds,31.5,-8.1,,2025-10-09
+Garrett Wilson,WR,DEN @ NYJ,Rec Yds,55.5,+8.1,,2025-10-09
+David Njoku,TE,CLE @ PIT,Rec Yds,30.5,+8,,2025-10-09
+James Cook III,RB,BUF @ ATL,Rush Yds,70.5,+8,,2025-10-09
+TreVeyon Henderson,RB,NE @ NO,Rush + Rec Yds,50.5,+7.9,,2025-10-09
+Chase Brown,RB,CIN @ GB,Rush Yds,46.5,-7.8,,2025-10-09
+Tory Horton,WR,SEA @ JAC,Rec Yds,20.5,+7.7,,2025-10-09
+Tony Pollard,RB,TEN @ LV,Rush Yds,50.5,+7.6,,2025-10-09
+Patrick Mahomes II,QB,DET @ KC,Rush Yds,31.5,-7.6,,2025-10-09
+Jaxson Dart,QB,PHI @ NYG,Rush Yds,38.5,-7.5,,2025-10-09
+De'Von Achane,RB,LAC @ MIA,Rush Yds,55.5,+7.4,,2025-10-09
+Ja'Marr Chase,WR,CIN @ GB,Rec Yds,59.5,+7.4,,2025-10-09
+Hassan Haskins,RB,LAC @ MIA,Rush Yds,34.5,+7.3,,2025-10-09
+Andrei Iosivas,WR,CIN @ GB,Rec Yds,10.5,+7.2,,2025-10-09
+Ashton Jeanty,RB,TEN @ LV,Rush + Rec Yds,90.5,+7.1,,2025-10-09
+Jalin Hyatt,WR,PHI @ NYG,Rec Yds,15.5,+7,,2025-10-09
+Marquise Brown,WR,DET @ KC,Rec Yds,42.5,-7,,2025-10-09
+D'Andre Swift,RB,CHI @ WAS,Rush Yds,45.5,+7,,2025-10-09
+Stefon Diggs,WR,NE @ NO,Rec Yds,63.5,-6.9,,2025-10-09
+Mark Andrews,TE,LAR @ BAL,Rec Yds,25.5,+6.9,,2025-10-09
+Cam Skattebo,RB,PHI @ NYG,Rush Yds,45.5,+6.9,,2025-10-09
+Keenan Allen,WR,LAC @ MIA,Rec Yds,50.5,+6.9,,2025-10-09
+Dyami Brown,WR,SEA @ JAC,Rec Yds,31.5,-6.8,,2025-10-09
+Drake Maye,QB,NE @ NO,Rush Yds,20.5,+6.8,,2025-10-09
+Josh Jacobs,RB,CIN @ GB,Rush + Rec Yds,95.5,+6.7,,2025-10-09
+Jahmyr Gibbs,RB,DET @ KC,Rush Yds,70.5,-6.6,,2025-10-09
+Rashod Bateman,WR,LAR @ BAL,Rec Yds,24.5,+6.5,,2025-10-09
+Quinshon Judkins,RB,CLE @ PIT,Rush Yds,80.5,-6.5,,2025-10-09
+Deebo Samuel Sr.,WR,CHI @ WAS,Rec Yds,50.5,+6.5,,2025-10-09
+Jahmyr Gibbs,RB,DET @ KC,Rec Yds,30.5,-6.4,,2025-10-09
+Saquon Barkley,RB,PHI @ NYG,Rush Yds,88.5,-6.3,,2025-10-09
+Drake London,WR,BUF @ ATL,Rec Yds,70.5,-6.3,,2025-10-09
+Quentin Johnston,WR,LAC @ MIA,Rec Yds,55.5,+6.3,,2025-10-09
+Kareem Hunt,RB,DET @ KC,Rush Yds,33.5,-6.2,,2025-10-09
+Juwan Johnson,TE,NE @ NO,Rec Yds,30.5,+6.2,,2025-10-09
+Rashid Shaheed,WR,NE @ NO,Rec Yds,49.5,-6.1,,2025-10-09
+Derrick Henry,RB,LAR @ BAL,Rush Yds,63.5,+6.1,,2025-10-09
+Evan Engram,TE,DEN @ NYJ,Rec Yds,20.5,+6,,2025-10-09
+Quinshon Judkins,RB,CLE @ PIT,Rush + Rec Yds,90.5,+6,,2025-10-09
+Breece Hall,RB,DEN @ NYJ,Rec Yds,30.5,-6,,2025-10-09
+Blake Corum,RB,LAR @ BAL,Rush Yds,20.5,+6,,2025-10-09
+Curtis Samuel,WR,BUF @ ATL,Rec Yds,14.5,-6,,2025-10-09
+Kenneth Walker III,RB,SEA @ JAC,Rec Yds,8.5,+5.9,,2025-10-09
+Kenneth Gainwell,RB,CLE @ PIT,Rush Yds,24.5,+5.8,,2025-10-09
+Justin Herbert,QB,LAC @ MIA,Pass Yds,249.5,+5.8,,2025-10-09
+Malik Washington,WR,LAC @ MIA,Rec Yds,20.5,+5.8,,2025-10-09
+Quinshon Judkins,RB,CLE @ PIT,Rec Yds,9.5,+5.8,,2025-10-09
+Rhamondre Stevenson,RB,NE @ NO,Rush + Rec Yds,60.5,+5.8,,2025-10-09
+Geno Smith,QB,TEN @ LV,Rush Yds,5.5,+5.7,,2025-10-09
+Jonathan Taylor,RB,ARI @ IND,Rush + Rec Yds,110.5,+5.7,,2025-10-09
+Darren Waller,TE,LAC @ MIA,Rec Yds,35.5,+5.7,,2025-10-09
+Breece Hall,RB,DEN @ NYJ,Rush Yds,69.5,-5.7,,2025-10-09
+A.J. Brown,WR,PHI @ NYG,Rec Yds,67.5,-5.7,,2025-10-09
+Elic Ayomanor,WR,TEN @ LV,Rec Yds,29.5,+5.7,,2025-10-09
+A.J. Dillon,RB,PHI @ NYG,Rush Yds,10.5,-5.7,,2025-10-09
+Christian McCaffrey,RB,SF @ TB,Rush Yds,55.5,+5.7,,2025-10-09
+Puka Nacua,WR,LAR @ BAL,Rec Yds,101.5,-5.6,,2025-10-09
+Tetairoa McMillan,WR,DAL @ CAR,Rec Yds,71.5,-5.6,,2025-10-09
+Bo Nix,QB,DEN @ NYJ,Pass Yds,229.5,-5.5,,2025-10-09
+Bijan Robinson,RB,BUF @ ATL,Rush Yds,77.5,-5.5,,2025-10-09
+DK Metcalf,WR,CLE @ PIT,Rec Yds,51.5,+5.5,,2025-10-09
+Kyren Williams,RB,LAR @ BAL,Rush + Rec Yds,87.5,+5.5,,2025-10-09
+Justin Fields,QB,DEN @ NYJ,Rush Yds,35.5,+5.5,,2025-10-09
+Dont'e Thornton Jr.,WR,TEN @ LV,Rec Yds,16.5,+5.4,,2025-10-09
+Ollie Gordon II,RB,LAC @ MIA,Rush Yds,13.5,+5.4,,2025-10-09
+Chase Brown,RB,CIN @ GB,Rec Yds,22.5,-5.4,,2025-10-09
+Ashton Jeanty,RB,TEN @ LV,Rush Yds,70.5,+5.4,,2025-10-09
+Kayshon Boutte,WR,NE @ NO,Rec Yds,25.5,+5.3,,2025-10-09
+Bhayshul Tuten,RB,SEA @ JAC,Rush Yds,15.5,+5.3,,2025-10-09
+Drake London,WR,BUF @ ATL,Rec Yds,69.5,-5.3,,2025-10-09
+Isiah Pacheco,RB,DET @ KC,Rush + Rec Yds,44.5,+5.2,,2025-10-09
+Jacory Croskey-Merritt,RB,CHI @ WAS,Rush + Rec Yds,77.5,-5.2,,2025-10-09
+Troy Franklin,WR,DEN @ NYJ,Rec Yds,40.5,-5.1,,2025-10-09
+Josh Downs,WR,ARI @ IND,Rec Yds,39.5,-5,,2025-10-09
+Jakobi Meyers,WR,TEN @ LV,Rec Yds,50.5,+5,,2025-10-09
+Cooper Kupp,WR,SEA @ JAC,Rec Yds,40.5,+5,,2025-10-09
+Michael Carter,RB,ARI @ IND,Rush + Rec Yds,60.5,+5,,2025-10-09
+Justin Herbert,QB,LAC @ MIA,Rush Yds,14.5,+4.9,,2025-10-09
+Caleb Williams,QB,CHI @ WAS,Pass Yds,237.5,-4.9,,2025-10-09
+DeMario Douglas,WR,NE @ NO,Rec Yds,10.5,+4.8,,2025-10-09
+Emeka Egbuka,WR,SF @ TB,Rec Yds,75.5,-4.8,,2025-10-09
+Tyler Allgeier,RB,BUF @ ATL,Rush Yds,28.5,+4.8,,2025-10-09
+Olamide Zaccheaus,WR,CHI @ WAS,Rec Yds,27.5,-4.7,,2025-10-09
+Rico Dowdle,RB,DAL @ CAR,Rec Yds,15.5,-4.7,,2025-10-09
+Saquon Barkley,RB,PHI @ NYG,Rush + Rec Yds,110.5,-4.7,,2025-10-09
+Dallas Goedert,TE,PHI @ NYG,Rec Yds,31.5,+4.7,,2025-10-09
+Jaylen Warren,RB,CLE @ PIT,Rush Yds,44.5,+4.6,,2025-10-09
+Amon-Ra St. Brown,WR,DET @ KC,Rec Yds,69.5,+4.6,,2025-10-09
+Cade Otton,TE,SF @ TB,Rec Yds,28.5,-4.6,,2025-10-09
+Darnell Washington,TE,CLE @ PIT,Rec Yds,10.5,-4.5,,2025-10-09
+Joe Flacco,QB,CIN @ GB,Pass Yds,205.5,+4.5,,2025-10-09
+Kyren Williams,RB,LAR @ BAL,Rush Yds,75.5,-4.5,,2025-10-09
+Justin Herbert,QB,LAC @ MIA,Pass ATTs,35.5,-4.5,,2025-10-09
+J.K. Dobbins,RB,DEN @ NYJ,Rush Yds,70.5,-4.5,,2025-10-09
+Dillon Gabriel,QB,CLE @ PIT,Rush Yds,12.5,-4.5,,2025-10-09
+Christian McCaffrey,RB,SF @ TB,Rec Yds,48.5,+4.5,,2025-10-09
+Rhamondre Stevenson,RB,NE @ NO,Rush Yds,40.5,+4.4,,2025-10-09
+Daniel Jones,QB,ARI @ IND,Rush Yds,15.5,+4.3,,2025-10-09
+Caleb Williams,QB,CHI @ WAS,Rush Yds,20.5,+4.3,,2025-10-09
+David Montgomery,RB,DET @ KC,Rush Yds,41.5,+4.3,,2025-10-09
+Kyle Pitts Sr.,TE,BUF @ ATL,Rec Yds,37.5,+4.2,,2025-10-09
+Kyren Williams,RB,LAR @ BAL,Rec Yds,10.5,+4.2,,2025-10-09
+DJ Moore,WR,CHI @ WAS,Rec Yds,39.5,+4.2,,2025-10-09
+Mike Gesicki,TE,CIN @ GB,Rec Yds,20.5,-4.2,,2025-10-09
+Courtland Sutton,WR,DEN @ NYJ,Rec Yds,64.5,-4.2,,2025-10-09
+Tyrone Tracy Jr.,RB,PHI @ NYG,Rush Yds,24.5,-4.1,,2025-10-09
+Chig Okonkwo,TE,TEN @ LV,Rec Yds,25.5,+4.1,,2025-10-09
+Alvin Kamara,RB,NE @ NO,Rec Yds,15.5,+4.1,,2025-10-09
+Trevor Lawrence,QB,SEA @ JAC,Rush Yds,15.5,-4,,2025-10-09
+Jake Tonges,TE,SF @ TB,Rec Yds,36.5,-4,,2025-10-09
+Jalen Hurts,QB,PHI @ NYG,Rush Yds,41.5,-4,,2025-10-09
+TreVeyon Henderson,RB,NE @ NO,Rush Yds,30.5,+3.9,,2025-10-09
+Davante Adams,WR,LAR @ BAL,Rec Yds,67.5,-3.9,,2025-10-09
+Josh Jacobs,RB,CIN @ GB,Rush Yds,80.5,-3.9,,2025-10-09
+Romeo Doubs,WR,CIN @ GB,Rush + Rec Yds,42.5,+3.9,,2025-10-09
+Kendre Miller,RB,NE @ NO,Rush Yds,32.5,-3.8,,2025-10-09
+Beaux Collins,WR,PHI @ NYG,Rec Yds,12.5,+3.8,,2025-10-09
+Josh Jacobs,RB,CIN @ GB,Rec Yds,14.5,+3.8,,2025-10-09
+Spencer Rattler,QB,NE @ NO,Rush Yds,20.5,-3.6,,2025-10-09
+Chris Godwin Jr.,WR,SF @ TB,Rush + Rec Yds,50.5,+3.6,,2025-10-09
+Calvin Ridley,WR,TEN @ LV,Rec Yds,44.5,+3.6,,2025-10-09
+Cam Ward,QB,TEN @ LV,Pass ATTs,32.5,-3.6,,2025-10-09
+Javonte Williams,RB,DAL @ CAR,Rec Yds,17.5,-3.6,,2025-10-09
+Rhamondre Stevenson,RB,NE @ NO,Rec Yds,10.5,+3.6,,2025-10-09
+Rome Odunze,WR,CHI @ WAS,Rec Yds,66.5,-3.5,,2025-10-09
+Wan'Dale Robinson,WR,PHI @ NYG,Rec Yds,45.5,-3.5,,2025-10-09
+Rachaad White,RB,SF @ TB,Rec Yds,23.5,-3.5,,2025-10-09
+DeVonta Smith,WR,PHI @ NYG,Rec Yds,47.5,+3.5,,2025-10-09
+George Pickens,WR,DAL @ CAR,Rec Yds,71.5,-3.4,,2025-10-09
+Cam Ward,QB,TEN @ LV,Pass Yds,195.5,-3.4,,2025-10-09
+Zach Charbonnet,RB,SEA @ JAC,Rec Yds,10.5,-3.4,,2025-10-09
+Julian Hill,TE,LAC @ MIA,Rec Yds,10.5,-3.4,,2025-10-09
+Sam LaPorta,TE,DET @ KC,Rec Yds,40.5,+3.3,,2025-10-09
+Matthew Stafford,QB,LAR @ BAL,Pass Yds,261.5,-3.3,,2025-10-09
+Luke Schoonmaker,TE,DAL @ CAR,Rec Yds,10.5,-3.2,,2025-10-09
+Tucker Kraft,TE,CIN @ GB,Rec Yds,45.5,+3.2,,2025-10-09
+TreVeyon Henderson,RB,NE @ NO,Rec Yds,13.5,+3.2,,2025-10-09
+Elijah Arroyo,TE,SEA @ JAC,Rec Yds,10.5,+3.2,,2025-10-09
+Bryce Young,QB,DAL @ CAR,Pass ATTs,33.5,-3.1,,2025-10-09
+Justin Herbert,QB,LAC @ MIA,U 24.5,U 24.5,-3.1,,2025-10-09
+Ashton Jeanty,RB,TEN @ LV,Rec Yds,17.5,-3.1,,2025-10-09
+Brashard Smith,RB,DET @ KC,Rec Yds,11.5,-3.1,,2025-10-09
+Jaylen Warren,RB,CLE @ PIT,Rec Yds,17.5,+3.1,,2025-10-09
+Pat Freiermuth,TE,CLE @ PIT,Rec Yds,15.5,+3,,2025-10-09
+Tyrone Tracy Jr.,RB,PHI @ NYG,Rec Yds,10.5,-3,,2025-10-09
+Cam Skattebo,RB,PHI @ NYG,Rec Yds,14.5,+3,,2025-10-09
+Gunnar Helm,TE,TEN @ LV,Rec Yds,17.5,-3,,2025-10-09
+George Pickens,WR,DAL @ CAR,Rush + Rec Yds,69.5,+3,,2025-10-09
+Jonnu Smith,TE,CLE @ PIT,Rec Yds,26.5,-2.9,,2025-10-09
+Aaron Rodgers,QB,CLE @ PIT,Pass ATTs,30.5,-2.9,,2025-10-09
+Trevor Lawrence,QB,SEA @ JAC,U 22.5,U 22.5,-2.9,,2025-10-09
+Chris Godwin Jr.,WR,SF @ TB,Rec Yds,52.5,-2.9,,2025-10-09
+Trevor Lawrence,QB,SEA @ JAC,Pass ATTs,33.5,-2.9,,2025-10-09
+Tetairoa McMillan,WR,DAL @ CAR,Rush + Rec Yds,67.5,+2.8,,2025-10-09
+JuJu Smith-Schuster,WR,DET @ KC,Rec Yds,25.5,-2.8,,2025-10-09
+Javonte Williams,RB,DAL @ CAR,Rush Yds,76.5,-2.8,,2025-10-09
+Tee Higgins,WR,CIN @ GB,Rec Yds,40.5,+2.7,,2025-10-09
+David Montgomery,RB,DET @ KC,Rec Yds,6.5,+2.7,,2025-10-09
+Kimani Vidal,RB,LAC @ MIA,Rush Yds,30.5,+2.7,,2025-10-09
+Tua Tagovailoa,QB,LAC @ MIA,Pass ATTs,33.5,-2.7,,2025-10-09
+Spencer Rattler,QB,NE @ NO,U 22.5,U 22.5,-2.7,,2025-10-09
+Cam Skattebo,RB,PHI @ NYG,Rush ATTs,11.5,+2.7,,2025-10-09
+Chase Brown,RB,CIN @ GB,Rush ATTs,13.5,-2.7,,2025-10-09
+Aaron Rodgers,QB,CLE @ PIT,U 20.5,U 20.5,-2.7,,2025-10-09
+Austin Hooper,TE,NE @ NO,Rec Yds,10.5,+2.6,,2025-10-09
+Jaxson Dart,QB,PHI @ NYG,Pass ATTs,31,-2.6,,2025-10-09
+Justin Fields,QB,DEN @ NYJ,Pass ATTs,30.5,-2.6,,2025-10-09
+Daniel Jones,QB,ARI @ IND,U 21.5,U 21.5,-2.6,,2025-10-09
+Jahmyr Gibbs,RB,DET @ KC,Rush ATTs,15.5,-2.6,,2025-10-09
+Zach Charbonnet,RB,SEA @ JAC,Rush Yds,34.5,+2.6,,2025-10-09
+Matthew Golden,WR,CIN @ GB,Rec Yds,40.5,+2.6,,2025-10-09
+Baker Mayfield,QB,SF @ TB,Pass ATTs,33.5,-2.5,,2025-10-09
+Spencer Rattler,QB,NE @ NO,Pass ATTs,33.5,-2.5,,2025-10-09
+Josh Allen,QB,BUF @ ATL,Rush Yds,36.5,-2.5,,2025-10-09
+Justice Hill,RB,LAR @ BAL,Rec Yds,15.5,+2.5,,2025-10-09
+Bryce Young,QB,DAL @ CAR,Rush Yds,8.5,+2.5,,2025-10-09
+Travis Etienne Jr.,RB,SEA @ JAC,Rush Yds,64.5,-2.4,,2025-10-09
+Jonathan Taylor,RB,ARI @ IND,Rec Yds,15.5,+2.4,,2025-10-09
+Bo Nix,QB,DEN @ NYJ,Rush Yds,22.5,-2.4,,2025-10-09
+Tony Pollard,RB,TEN @ LV,Rec Yds,11.5,-2.4,,2025-10-09
+RJ Harvey,RB,DEN @ NYJ,Rec Yds,15.5,-2.4,,2025-10-09
+Theo Johnson,TE,PHI @ NYG,Rec Yds,29.5,+2.4,,2025-10-09
+Travis Hunter,WR,SEA @ JAC,Rec Yds,34.5,+2.4,,2025-10-09
+Jahan Dotson,WR,PHI @ NYG,Rec Yds,8.5,+2.4,,2025-10-09
+Tyrone Tracy Jr.,RB,PHI @ NYG,Rush + Rec Yds,37.5,-2.3,,2025-10-09
+D'Andre Swift,RB,CHI @ WAS,Rec Yds,20.5,-2.3,,2025-10-09
+Marvin Mims Jr.,WR,DEN @ NYJ,Rec Yds,25.5,+2.3,,2025-10-09
+Sam Darnold,QB,SEA @ JAC,Rush Yds,6.5,-2.3,,2025-10-09
+Stefon Diggs,WR,NE @ NO,Rush + Rec Yds,63.5,-2.3,,2025-10-09
+Tyjae Spears,RB,TEN @ LV,Rec Yds,5.5,+2.3,,2025-10-09
+Khalil Shakir,WR,BUF @ ATL,Rec Yds,48.5,-2.3,,2025-10-09
+Romeo Doubs,WR,CIN @ GB,Rec Yds,44.5,-2.2,,2025-10-09
+Dak Prescott,QB,DAL @ CAR,Pass ATTs,32.5,+2.2,,2025-10-09
+Brandin Cooks,WR,NE @ NO,Rec Yds,18.5,-2.2,,2025-10-09
+Tyjae Spears,RB,TEN @ LV,Rush Yds,15.5,+2.2,,2025-10-09
+Emeka Egbuka,WR,SF @ TB,Rush + Rec Yds,73.5,+2.2,,2025-10-09
+Saquon Barkley,RB,PHI @ NYG,Rec Yds,18.5,-2.1,,2025-10-09
+Jordan Love,QB,CIN @ GB,Rush Yds,8.5,+2.1,,2025-10-09
+Caleb Williams,QB,CHI @ WAS,Pass ATTs,33.5,-2.1,,2025-10-09
+Travis Kelce,TE,DET @ KC,Rec Yds,43.5,+2.1,,2025-10-09
+Saquon Barkley,RB,PHI @ NYG,Rush ATTs,18.5,-2.1,,2025-10-09
+Jordan Love,QB,CIN @ GB,Pass ATTs,30.5,-2.1,,2025-10-09
+Rachaad White,RB,SF @ TB,Rush + Rec Yds,79.5,+2.1,,2025-10-09
+Kareem Hunt,RB,DET @ KC,Rush + Rec Yds,42.5,-2,,2025-10-09
+Bryce Young,QB,DAL @ CAR,U 21.5,U 21.5,-2,,2025-10-09
+Jake Ferguson,TE,DAL @ CAR,Rec Yds,47.5,-2,,2025-10-09
+Dawson Knox,TE,BUF @ ATL,Rec Yds,10.5,-2,,2025-10-09
+Hunter Henry,TE,NE @ NO,Rec Yds,39.5,+2,,2025-10-09
+Patrick Mahomes II,QB,DET @ KC,Pass ATTs,36.5,-1.9,,2025-10-09
+Sam Darnold,QB,SEA @ JAC,Pass ATTs,31.5,-1.9,,2025-10-09
+Tre Tucker,WR,TEN @ LV,Rec Yds,42.5,-1.9,,2025-10-09
+Drake Maye,QB,NE @ NO,Pass Yds,229.5,+1.9,,2025-10-09
+Tyler Warren,TE,ARI @ IND,Rec Yds,50.5,+1.9,,2025-10-09
+Geno Smith,QB,TEN @ LV,O 19.5,O 19.5,+1.9,,2025-10-09
+Travis Etienne Jr.,RB,SEA @ JAC,Rec Yds,15.5,-1.9,,2025-10-09
+Sam Darnold,QB,SEA @ JAC,U 22.5,U 22.5,-1.8,,2025-10-09
+Jalen Hurts,QB,PHI @ NYG,Pass ATTs,27.5,-1.8,,2025-10-09
+Drake Maye,QB,NE @ NO,Pass ATTs,30.5,-1.7,,2025-10-09
+Jayden Daniels,QB,CHI @ WAS,Pass ATTs,30.5,-1.7,,2025-10-09
+Bijan Robinson,RB,BUF @ ATL,Rush ATTs,16.5,-1.7,,2025-10-09
+Joe Flacco,QB,CIN @ GB,U 22.5,U 22.5,-1.6,,2025-10-09
+Jaylen Waddle,WR,LAC @ MIA,Rec Yds,69.5,-1.6,,2025-10-09
+A.J. Brown,WR,PHI @ NYG,Rush + Rec Yds,67.5,-1.6,,2025-10-09
+Patrick Mahomes II,QB,DET @ KC,U 24.5,U 24.5,-1.6,,2025-10-09
+Tony Pollard,RB,TEN @ LV,Rush ATTs,13.5,+1.6,,2025-10-09
+Jaylen Warren,RB,CLE @ PIT,Rush ATTs,14.5,-1.6,,2025-10-09
+Daniel Jones,QB,ARI @ IND,Pass ATTs,30.5,-1.6,,2025-10-09
+Noah Gray,TE,DET @ KC,Rec Yds,11.5,-1.6,,2025-10-09
+Jared Goff,QB,DET @ KC,Pass ATTs,31.5,-1.6,,2025-10-09
+Dalton Kincaid,TE,BUF @ ATL,Rec Yds,39.5,-1.5,,2025-10-09
+Javonte Williams,RB,DAL @ CAR,Rush + Rec Yds,96.5,-1.5,,2025-10-09
+Dontayvion Wicks,WR,CIN @ GB,RECs,3.5,-1.5,,2025-10-09
+Jonathan Taylor,RB,ARI @ IND,Rush Yds,89.5,+1.5,,2025-10-09
+Ladd McConkey,WR,LAC @ MIA,Rec Yds,53.5,+1.5,,2025-10-09
+James Cook III,RB,BUF @ ATL,Rush ATTs,15.5,+1.4,,2025-10-09
+Tyler Allgeier,RB,BUF @ ATL,Rush ATTs,9.5,-1.4,,2025-10-09
+Matthew Stafford,QB,LAR @ BAL,Pass ATTs,33.5,-1.4,,2025-10-09
+Michael Carter,RB,ARI @ IND,Rush Yds,45.5,+1.4,,2025-10-09
+Tua Tagovailoa,QB,LAC @ MIA,Rush Yds,3.5,-1.3,,2025-10-09
+Jayden Daniels,QB,CHI @ WAS,Rush Yds,43.5,+1.3,,2025-10-09
+Cam Ward,QB,TEN @ LV,U 18.5,U 18.5,-1.3,,2025-10-09
+Isiah Pacheco,RB,DET @ KC,Rush ATTs,7.5,+1.3,,2025-10-09
+Jordan Love,QB,CIN @ GB,U 20.5,U 20.5,-1.3,,2025-10-09
+TreVeyon Henderson,RB,NE @ NO,Rush ATTs,9.5,-1.3,,2025-10-09
+Rachaad White,RB,SF @ TB,Rush Yds,55.5,-1.3,,2025-10-09
+J.K. Dobbins,RB,DEN @ NYJ,Rec Yds,4.5,+1.3,,2025-10-09
+Isiah Pacheco,RB,DET @ KC,Rec Yds,8.5,+1.3,,2025-10-09
+Dak Prescott,QB,DAL @ CAR,Rush Yds,5.5,+1.2,,2025-10-09
+Xavier Worthy,WR,DET @ KC,Rush Yds,6.5,+1.2,,2025-10-09
+Nick Westbrook-Ikhine,WR,LAC @ MIA,Rec Yds,16.5,-1.2,,2025-10-09
+Dak Prescott,QB,DAL @ CAR,O 22.5,O 22.5,+1.2,,2025-10-09
+Dyami Brown,WR,SEA @ JAC,RECs,3.5,-1.2,,2025-10-09
+Marquise Brown,WR,DET @ KC,RECs,4.5,-1.2,,2025-10-09
+Geno Smith,QB,TEN @ LV,Pass ATTs,29.5,+1.2,,2025-10-09
+Drake Maye,QB,NE @ NO,U 21.5,U 21.5,-1.1,,2025-10-09
+Tyrone Tracy Jr.,RB,PHI @ NYG,RECs,2.5,-1.1,,2025-10-09
+Josh Jacobs,RB,CIN @ GB,Rush ATTs,18.5,+1.1,,2025-10-09
+Isiah Pacheco,RB,DET @ KC,Rush Yds,31.5,+1.1,,2025-10-09
+Harold Fannin Jr.,TE,CLE @ PIT,RECs,2.5,+1.1,,2025-10-09
+Drake London,WR,BUF @ ATL,RECs,6.5,-1.1,,2025-10-09
+Chimere Dike,WR,TEN @ LV,Rec Yds,12.5,-1.1,,2025-10-09
+Jake Tonges,TE,SF @ TB,RECs,4.5,-1.1,,2025-10-09
+Keenan Allen,WR,LAC @ MIA,RECs,4.5,+1.1,,2025-10-09
+Kenneth Walker III,RB,SEA @ JAC,Rush ATTs,12.5,+1.1,,2025-10-09
+Ashton Jeanty,RB,TEN @ LV,Rush ATTs,16.5,+1.1,,2025-10-09
+Kareem Hunt,RB,DET @ KC,Rush ATTs,9.5,-1,,2025-10-09
+Dillon Gabriel,QB,CLE @ PIT,U 20.5,U 20.5,-1,,2025-10-09
+Brian Thomas Jr.,WR,SEA @ JAC,RECs,5.5,-1,,2025-10-09
+Matthew Golden,WR,CIN @ GB,RECs,2.5,+1,,2025-10-09
+Zach Charbonnet,RB,SEA @ JAC,Rush + Rec Yds,50.5,+1,,2025-10-09
+Jaxon Smith-Njigba,WR,SEA @ JAC,RECs,5.5,+1,,2025-10-09
+Rhamondre Stevenson,RB,NE @ NO,Rush ATTs,12.5,-1,,2025-10-09
+Xavier Worthy,WR,DET @ KC,RECs,5.5,-1,,2025-10-09
+De'Von Achane,RB,LAC @ MIA,Rec Yds,32.5,-1,,2025-10-09
+Josh Allen,QB,BUF @ ATL,Pass ATTs,30.5,-1,,2025-10-09
+Michael Penix Jr.,QB,BUF @ ATL,Pass ATTs,31.5,-1,,2025-10-09
+Tua Tagovailoa,QB,LAC @ MIA,U 22.5,U 22.5,-1,,2025-10-09
+Brian Thomas Jr.,WR,SEA @ JAC,Rec Yds,60.5,-1,,2025-10-09
+Baker Mayfield,QB,SF @ TB,U 22.5,U 22.5,-1,,2025-10-09
+Chris Olave,WR,NE @ NO,RECs,6.5,-0.9,,2025-10-09
+Evan Engram,TE,DEN @ NYJ,RECs,2.5,+0.9,,2025-10-09
+Javonte Williams,RB,DAL @ CAR,RECs,3.5,-0.8,,2025-10-09
+Matthew Stafford,QB,LAR @ BAL,U 22.5,U 22.5,-0.8,,2025-10-09
+Bo Nix,QB,DEN @ NYJ,Pass ATTs,32.5,-0.8,,2025-10-09
+Zach Charbonnet,RB,SEA @ JAC,Rush ATTs,10.5,-0.8,,2025-10-09
+Mark Andrews,TE,LAR @ BAL,RECs,2.5,+0.8,,2025-10-09
+Jameson Williams,WR,DET @ KC,RECs,2.5,+0.8,,2025-10-09
+Justin Fields,QB,DEN @ NYJ,O 17.5,O 17.5,+0.8,,2025-10-09
+Jalen Hurts,QB,PHI @ NYG,U 18.5,U 18.5,-0.7,,2025-10-09
+David Montgomery,RB,DET @ KC,Rush ATTs,10.5,+0.8,,2025-10-09
+Jaxson Dart,QB,PHI @ NYG,Rush ATTs,6.5,+0.7,,2025-10-09
+Elic Ayomanor,WR,TEN @ LV,RECs,2.5,+0.7,,2025-10-09
+Gunnar Helm,TE,TEN @ LV,RECs,2.5,-0.7,,2025-10-09
+D'Andre Swift,RB,CHI @ WAS,RECs,3.5,-0.7,,2025-10-09
+Isaiah Bond,WR,CLE @ PIT,Rec Yds,30.5,-0.7,,2025-10-09
+Caleb Williams,QB,CHI @ WAS,O 19.5,O 19.5,+0.7,,2025-10-09
+Jake Ferguson,TE,DAL @ CAR,RECs,6.5,-0.7,,2025-10-09
+Joshua Palmer,WR,BUF @ ATL,RECs,1.5,+0.7,,2025-10-09
+Josh Allen,QB,BUF @ ATL,Rush ATTs,6.5,+0.7,,2025-10-09
+Bo Nix,QB,DEN @ NYJ,U 21.5,U 21.5,-0.7,,2025-10-09
+Pat Freiermuth,TE,CLE @ PIT,RECs,1.5,+0.7,,2025-10-09
+Chig Okonkwo,TE,TEN @ LV,RECs,2.5,+0.7,,2025-10-09
+Tyquan Thornton,WR,DET @ KC,RECs,1.5,+0.7,,2025-10-09
+Joe Flacco,QB,CIN @ GB,Pass TDs,0.5,+0.7,,2025-10-09
+Zay Flowers,WR,LAR @ BAL,RECs,4.5,+0.7,,2025-10-09
+Jalen Coker,WR,DAL @ CAR,RECs,2.5,-0.7,,2025-10-09
+Kareem Hunt,RB,DET @ KC,Rec Yds,6.5,-0.7,,2025-10-09
+Jacory Croskey-Merritt,RB,CHI @ WAS,Rec Yds,10.5,-0.7,,2025-10-09
+Tyrone Tracy Jr.,RB,PHI @ NYG,Rush ATTs,6.5,-0.7,,2025-10-09
+Quinshon Judkins,RB,CLE @ PIT,RECs,1.5,+0.7,,2025-10-09
+Jakobi Meyers,WR,TEN @ LV,RECs,4.5,+0.7,,2025-10-09
+Justin Fields,QB,DEN @ NYJ,Rush ATTs,7.5,+0.7,,2025-10-09
+Jaxson Dart,QB,PHI @ NYG,U 18.5,U 18.5,-0.6,,2025-10-09
+Tetairoa McMillan,WR,DAL @ CAR,RECs,4.5,+0.6,,2025-10-09
+Michael Pittman Jr.,WR,ARI @ IND,RECs,4.5,+0.6,,2025-10-09
+Jonathan Taylor,RB,ARI @ IND,O 0.5,O 0.5,+0.6,,2025-10-09
+RJ Harvey,RB,DEN @ NYJ,RECs,2.5,-0.6,,2025-10-09
+Josh Reynolds,WR,DEN @ NYJ,Rec Yds,17.5,-0.6,,2025-10-09
+Josh Allen,QB,BUF @ ATL,U 20.5,U 20.5,-0.6,,2025-10-09
+Daniel Bellinger,TE,PHI @ NYG,RECs,1.5,+0.6,,2025-10-09
+J.K. Dobbins,RB,DEN @ NYJ,Rush ATTs,15.5,-0.6,,2025-10-09
+David Njoku,TE,CLE @ PIT,RECs,3.5,+0.6,,2025-10-09
+Darnell Washington,TE,CLE @ PIT,RECs,1.5,-0.6,,2025-10-09
+Kenneth Walker III,RB,SEA @ JAC,RECs,1.5,+0.6,,2025-10-09
+Tucker Kraft,TE,CIN @ GB,RECs,3.5,+0.6,,2025-10-09
+Julian Hill,TE,LAC @ MIA,RECs,1.5,-0.6,,2025-10-09
+Stefon Diggs,WR,NE @ NO,RECs,4.5,+0.6,,2025-10-09
+Quinshon Judkins,RB,CLE @ PIT,Rush ATTs,18.5,-0.5,,2025-10-09
+D'Andre Swift,RB,CHI @ WAS,Rush + Rec Yds,78.5,-0.5,,2025-10-09
+Dak Prescott,QB,DAL @ CAR,Pass TDs,1.5,+0.5,,2025-10-09
+Dillon Gabriel,QB,CLE @ PIT,Pass TDs,0.5,+0.5,,2025-10-09
+Kyren Williams,RB,LAR @ BAL,Rush ATTs,16.5,+0.5,,2025-10-09
+Cam Ward,QB,TEN @ LV,Rush ATTs,2.5,+0.5,,2025-10-09
+Jordan Love,QB,CIN @ GB,Pass TDs,1.5,+0.5,,2025-10-09
+Andrei Iosivas,WR,CIN @ GB,RECs,1.5,+0.5,,2025-10-09
+Jaxson Dart,QB,PHI @ NYG,Pass TDs,0.5,+0.5,,2025-10-09
+Juwan Johnson,TE,NE @ NO,RECs,3.5,+0.5,,2025-10-09
+Joe Flacco,QB,CIN @ GB,O 0.5,O 0.5,+0.5,,2025-10-09
+Justin Fields,QB,DEN @ NYJ,Pass TDs,1.5,-0.5,,2025-10-09
+Baker Mayfield,QB,SF @ TB,Pass TDs,1.5,+0.5,,2025-10-09
+Josh Jacobs,RB,CIN @ GB,O 0.5,O 0.5,+0.5,,2025-10-09
+Darren Waller,TE,LAC @ MIA,RECs,3.5,+0.5,,2025-10-09
+Ja'Marr Chase,WR,CIN @ GB,RECs,5.5,+0.5,,2025-10-09
+AJ Barner,TE,SEA @ JAC,Rec Yds,25.5,-0.5,,2025-10-09
+Jalen Hurts,QB,PHI @ NYG,Rush ATTs,8.5,+0.5,,2025-10-09
+Cam Ward,QB,TEN @ LV,Pass TDs,0.5,+0.5,,2025-10-09
+Cooper Kupp,WR,SEA @ JAC,RECs,4.5,-0.5,,2025-10-09
+Puka Nacua,WR,LAR @ BAL,RECs,8.5,-0.4,,2025-10-09
+DK Metcalf,WR,CLE @ PIT,RECs,4.5,-0.4,,2025-10-09
+Brandin Cooks,WR,NE @ NO,RECs,1.5,+0.5,,2025-10-09
+Devaughn Vele,WR,NE @ NO,O 0.5,O 0.5,-0.4,,2025-10-09
+Wan'Dale Robinson,WR,PHI @ NYG,RECs,5.5,-0.4,,2025-10-09
+Patrick Mahomes II,QB,DET @ KC,Rush ATTs,4.5,+0.4,,2025-10-09
+Jamari Thrash,WR,CLE @ PIT,O 0.5,O 0.5,-0.4,,2025-10-09
+Kyle Williams,WR,NE @ NO,O 0.5,O 0.5,-0.4,,2025-10-09
+Baker Mayfield,QB,SF @ TB,Rush Yds,17.5,-0.4,,2025-10-09
+LeQuint Allen Jr.,RB,SEA @ JAC,O 0.5,O 0.5,-0.4,,2025-10-09
+Geno Smith,QB,TEN @ LV,O 0.5,O 0.5,+0.4,,2025-10-09
+Tyler Warren,TE,ARI @ IND,RECs,4.5,+0.4,,2025-10-09
+Tyler Badie,RB,DEN @ NYJ,O 0.5,O 0.5,-0.4,,2025-10-09
+Jahan Dotson,WR,PHI @ NYG,O 0.5,O 0.5,-0.4,,2025-10-09
+Keaton Mitchell,RB,LAR @ BAL,O 0.5,O 0.5,-0.4,,2025-10-09
+Ben Skowronek,WR,CLE @ PIT,O 0.5,O 0.5,-0.4,,2025-10-09
+Luke Schoonmaker,TE,DAL @ CAR,O 0.5,O 0.5,-0.4,,2025-10-09
+Hunter Henry,TE,NE @ NO,RECs,3.5,+0.4,,2025-10-09
+DeMario Douglas,WR,NE @ NO,RECs,1.5,+0.4,,2025-10-09
+DJ Moore,WR,CHI @ WAS,RECs,3.5,+0.4,,2025-10-09
+Isaiah Davis,RB,DEN @ NYJ,O 0.5,O 0.5,-0.4,,2025-10-09
+Beaux Collins,WR,PHI @ NYG,O 0.5,O 0.5,-0.4,,2025-10-09
+Johnny Mundt,TE,SEA @ JAC,O 0.5,O 0.5,-0.4,,2025-10-09
+Jalin Hyatt,WR,PHI @ NYG,RECs,1.5,+0.4,,2025-10-09
+Michael Pittman Jr.,WR,ARI @ IND,Rec Yds,53.5,+0.4,,2025-10-09
+Jalin Hyatt,WR,PHI @ NYG,O 0.5,O 0.5,-0.4,,2025-10-09
+Matthew Stafford,QB,LAR @ BAL,Pass TDs,1.5,+0.4,,2025-10-09
+Samaje Perine,RB,CIN @ GB,O 0.5,O 0.5,-0.4,,2025-10-09
+Ty Johnson,RB,BUF @ ATL,O 0.5,O 0.5,-0.4,,2025-10-09
+Tee Higgins,WR,CIN @ GB,RECs,3.5,+0.4,,2025-10-09
+Kyren Williams,RB,LAR @ BAL,O 0.5,O 0.5,+0.4,,2025-10-09
+Ray Davis,RB,BUF @ ATL,O 0.5,O 0.5,-0.4,,2025-10-09
+Jared Goff,QB,DET @ KC,U 22.5,U 22.5,-0.4,,2025-10-09
+De'Von Achane,RB,LAC @ MIA,RECs,4.5,+0.4,,2025-10-09
+James Cook III,RB,BUF @ ATL,O 0.5,O 0.5,+0.4,,2025-10-09
+Dillon Gabriel,QB,CLE @ PIT,O 0.5,O 0.5,+0.4,,2025-10-09
+Rhamondre Stevenson,RB,NE @ NO,RECs,2.5,-0.3,,2025-10-09
+Isaiah Bond,WR,CLE @ PIT,O 0.5,O 0.5,-0.3,,2025-10-09
+Brandin Cooks,WR,NE @ NO,O 0.5,O 0.5,-0.3,,2025-10-09
+Trevor Lawrence,QB,SEA @ JAC,O 0.5,O 0.5,+0.3,,2025-10-09
+Tony Pollard,RB,TEN @ LV,RECs,1.5,+0.3,,2025-10-09
+Kareem Hunt,RB,DET @ KC,RECs,1.5,-0.3,,2025-10-09
+Bryce Young,QB,DAL @ CAR,O 0.5,O 0.5,-0.3,,2025-10-09
+Luther Burden III,WR,CHI @ WAS,O 0.5,O 0.5,-0.3,,2025-10-09
+Jared Goff,QB,DET @ KC,Pass TDs,1.5,+0.3,,2025-10-09
+George Pickens,WR,DAL @ CAR,RECs,4.5,+0.3,,2025-10-09
+Michael Wilson,WR,ARI @ IND,Rec Yds,25.5,-0.3,,2025-10-09
+Justice Hill,RB,LAR @ BAL,O 0.5,O 0.5,-0.3,,2025-10-09
+Harold Fannin Jr.,TE,CLE @ PIT,O 0.5,O 0.5,-0.3,,2025-10-09
+Parker Washington,WR,SEA @ JAC,O 0.5,O 0.5,-0.3,,2025-10-09
+Jahmyr Gibbs,RB,DET @ KC,O 0.5,O 0.5,+0.3,,2025-10-09
+Joshua Palmer,WR,BUF @ ATL,O 0.5,O 0.5,-0.3,,2025-10-09
+Davante Adams,WR,LAR @ BAL,RECs,4.5,+0.3,,2025-10-09
+Mike Gesicki,TE,CIN @ GB,RECs,2.5,-0.3,,2025-10-09
+Jalen Coker,WR,DAL @ CAR,O 0.5,O 0.5,-0.3,,2025-10-09
+Chase Brown,RB,CIN @ GB,RECs,3.5,-0.3,,2025-10-09
